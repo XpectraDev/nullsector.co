@@ -7,7 +7,7 @@ author: "Miguel Zabala"
 tags: ["Pentesting"]
 legacyUrl: "https://nullsectorblog.co/ia-con-superpoderes-ia-generativa-y-caldera/"
 ---
-![](https://nullsector.co/wp-content/uploads/2024/06/DALL·E-2024-06-20-01.08.57-A-realistic-scene-in-a-modern-cybersecurity-operations-center.-The-left-side-shows-cyber-attackers-in-a-dark-high-tech-room-filled-with-multiple-scre-1-1024x585.webp)
+![](/investigacion/ia-con-superpoderes-ia-generativa-y-caldera/DALL-E-2024-06-20-01.08.57-A-realistic-scene-in-a-modern-cybersecurity-operations-center.-The-left-side-shows-cyber-attackers-in-a-dark-high-tech-room-filled-with-multiple-scre-1-1024x585.webp)
 
 En el mundo acelerado de la ciberseguridad, uno debe ser proactivo y no reactivo a los atacantes. [En mi investigación más reciente](https://nullsector.co/ia-con-superpoderes-ia-generativa-y-caldera/), estoy trabajando para darme cuenta de cómo la IA generativa y Caldera, puede revolucionar la seguridad ofensiva.
 

@@ -15,19 +15,19 @@ El análisis manual involucra una revisión detallada y meticulosa por parte de 
 
 Esta introducción ampliada no solo establece el contexto para la discusión posterior sobre los métodos de análisis, sino que también resalta la importancia crítica de las auditorías web en el panorama actual de la seguridad informática.
 
-![](https://nullsector.co/wp-content/uploads/2023/11/57b3ba57-2334-45d4-8bf6-a72bf9c037c8.webp)
+![](/investigacion/la-doble-fuerza-de-la-auditoria-web-combinando-tacticas-manuales-y-automaticas/57b3ba57-2334-45d4-8bf6-a72bf9c037c8.webp)
 
 #### Análisis Manual
 
 El análisis manual es realizado por expertos que inspeccionan el código y la funcionalidad de una aplicación web. Su principal ventaja es la capacidad de detectar vulnerabilidades sutiles y comprender en profundidad el flujo de trabajo de la aplicación. Sin embargo, es un proceso que consume tiempo y depende en gran medida de la experiencia del auditor.
 
-![](https://nullsector.co/wp-content/uploads/2023/11/be4855b8-c0f8-402a-b5fd-0b6cac18cda6.webp)
+![](/investigacion/la-doble-fuerza-de-la-auditoria-web-combinando-tacticas-manuales-y-automaticas/be4855b8-c0f8-402a-b5fd-0b6cac18cda6.webp)
 
 #### Análisis Automático
 
 Por otro lado, el análisis automático utiliza herramientas de software para escanear aplicaciones web en busca de vulnerabilidades conocidas. Es rápido y puede cubrir una amplia gama de problemas de seguridad de manera consistente. Aunque eficaz, puede generar falsos positivos y es menos efectivo en la detección de problemas complejos relacionados con la lógica de negocio.
 
-![](https://nullsector.co/wp-content/uploads/2023/11/5cd77073-47a9-4e4e-81b6-c4eedbacb637.webp)
+![](/investigacion/la-doble-fuerza-de-la-auditoria-web-combinando-tacticas-manuales-y-automaticas/5cd77073-47a9-4e4e-81b6-c4eedbacb637.webp)
 
 #### Casos de Uso y Ejemplos
 

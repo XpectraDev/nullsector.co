@@ -9,7 +9,7 @@ legacyUrl: "https://nullsectorblog.co/como-obtener-una-reverse-shell/"
 ---
 # Que es una Reverse Shell?
 
-![Como obtener una reverse shell](https://nullsector.co/wp-content/uploads/2017/12/Bash-new.sh_.png)
+![Como obtener una reverse shell](/investigacion/como-obtener-una-reverse-shell/Bash-new.sh_.png)
 
 Cuando logramos ejecutar comandos de manera remota en un equipo nuestro objetivo principal es obtener una Reverse Shell conectándose a el equipo local mediante un puerto en escucha, posterior a esto proceder con el escalado de privilegios, a continuación una muy útil recopilación de posibles shell en diferentes lenguajes según el entorno de la maquina a la cual se ejecutara la shell
 

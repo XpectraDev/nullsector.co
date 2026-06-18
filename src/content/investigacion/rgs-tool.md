@@ -7,7 +7,7 @@ author: "Miguel Zabala"
 tags: ["Pentesting"]
 legacyUrl: "https://nullsectorblog.co/mi-viaje-con-rgs-tool-de-principiante-a-mencion-honorable-en-el-concurso-de-nvidia/"
 ---
-![RGSTool](https://nullsector.co/wp-content/uploads/2024/08/RGSTool-1024x575.png)
+![RGSTool](/investigacion/rgs-tool/RGSTool-1024x575.png)
 
 ## Introducción
 
@@ -25,7 +25,7 @@ La fase inicial implicó una curva de aprendizaje pronunciada. Pasé incontables
 
 Desarrollar RGS Tool fue una mezcla de emoción y frustración. Hubo momentos de avance cuando las cosas funcionaban perfectamente y momentos en los que me sentía completamente atascado. El proyecto implicaba integrar varios modelos de IA, optimizar el rendimiento y asegurar la usabilidad. Uno de los mayores desafíos fue depurar problemas que surgían de integraciones complejas. Sin embargo, cada desafío fue una oportunidad de aprendizaje.
 
-![](https://nullsector.co/wp-content/uploads/2024/08/RGSH-1024x576.png)
+![](/investigacion/rgs-tool/RGSH-1024x576.png)
 
 ## La Competencia: Enfrentando Talento Increíble
 
@@ -35,7 +35,7 @@ A medida que se acercaba la fecha límite de presentación, sabía que la compet
 
 Recibir una mención honorable fue un momento de inmenso orgullo. Validó el trabajo duro, las noches en vela y la perseverancia que se invirtieron en el proyecto. Este reconocimiento fue especialmente especial porque marcó un hito significativo en mi viaje de ser un novato a alguien reconocido en la comunidad de IA.
 
-![](https://nullsector.co/wp-content/uploads/2024/08/HonorableMention-1024x518.png)
+![](/investigacion/rgs-tool/HonorableMention-1024x518.png)
 
 [Certificado IA Miguel Zabala](https://nullsector.co/wp-content/uploads/2024/08/Certificado-IA-Miguel-Zabala.pdf)[Descarga](https://nullsector.co/wp-content/uploads/2024/08/Certificado-IA-Miguel-Zabala.pdf)
 

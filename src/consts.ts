@@ -1,57 +1,94 @@
 // Constantes globales del sitio e identidad de Miguel Zabala.
-// Única fuente de verdad para SEO, schema.org y datos de autor.
-// Los campos marcados con TODO necesitan confirmación tuya.
+// Fuente de verdad para SEO, schema.org y contenido tipo CV.
 
 export const SITE = {
   url: 'https://nullsector.co',
   name: 'Nullsector',
-  title: 'Miguel Zabala | CEO de Xpectra, OSCE³ y GenAI',
+  title: 'Miguel Zabala | OSCE³, investigador de seguridad ofensiva e IA',
   description:
-    'Perfil de Miguel Zabala, fundador y CEO de Xpectra, OSCE³ e investigador en seguridad ofensiva e IA generativa aplicada a ciberseguridad.',
+    'Miguel Zabala, investigador de seguridad ofensiva OSCE³ con 9 años de experiencia (pentesting, exploit development, reversing) y fundador de Xpectra, IA generativa aplicada a ciberseguridad.',
   locale: 'es',
-  themeColor: '#0a0e14',
+  themeColor: '#0a0c10',
 } as const;
 
 export const PERSON = {
   name: 'Miguel Zabala',
-  alternateName: 'MangelZabala', // TODO: confirmar usuario/alias público
-  headline:
-    'Miguel Zabala: OSCE³, fundador de Xpectra e investigador en IA para ciberseguridad',
-  jobTitle: 'Fundador y CEO de Xpectra · Investigador en seguridad ofensiva',
+  alternateName: 'Nullsector',
+  headline: 'Investigador de seguridad ofensiva OSCE³ e IA generativa',
+  jobTitle: 'Penetration Tester · Investigador de seguridad ofensiva · Fundador de Xpectra',
   positioning:
-    'Miguel Zabala es fundador y CEO de Xpectra, investigador de seguridad ofensiva OSCE³ y especialista en IA generativa aplicada a ciberseguridad.',
+    'Investigador de seguridad ofensiva OSCE³ con 9 años de experiencia en pentesting, exploit development y reversing. Fundador de Xpectra, donde aplico IA generativa a la ciberseguridad.',
   valueProp:
     'Convierto experiencia ofensiva avanzada en agentes de IA capaces de analizar, validar y documentar riesgos sin comprometer la privacidad de los datos.',
-  email: '', // TODO: email público de contacto
+  email: 'nullsector00@gmail.com',
+  location: 'Bogotá, Colombia',
   worksFor: 'Xpectra',
-  // Trayectoria internacional desde 2015 (Colombia, España, Dinamarca)
+  credentialUrl: 'https://www.credential.net/profile/miguelzabala303830/wallet',
   knowsAbout: [
     'Seguridad ofensiva',
     'Pentesting',
     'Red Team',
     'Exploit development',
-    'Revisión de código',
     'Reversing',
+    'Revisión de código',
     'IA generativa aplicada a ciberseguridad',
   ],
-  // Perfiles oficiales — usados en schema "sameAs" (E-E-A-T)
   sameAs: [
     'https://www.linkedin.com/in/miguelzabalap',
     'https://github.com/MangelZabalaDevelop',
     'https://xpectra.ai',
-    // TODO: 'https://www.credential.net/<id>'  (verificación OSCE³)
+    'https://www.credential.net/profile/miguelzabala303830/wallet',
   ],
 } as const;
 
-// Credenciales con explicación (no solo el logo: hay que explicarlas — E-E-A-T)
+// Cifras de impacto para el hero
+export const STATS = [
+  { n: '9+', l: 'años en seguridad ofensiva' },
+  { n: 'OSCE³', l: 'nivel experto de OffSec' },
+  { n: '3', l: 'países: Colombia, España, Dinamarca' },
+  { n: '6+', l: 'sectores críticos auditados' },
+] as const;
+
+// Certificaciones con badge real y verificación pública
 export const CREDENTIALS = [
-  { code: 'OSCE³', name: 'Offensive Security Certified Expert 3', issuer: 'OffSec' },
-  { code: 'OSED', name: 'Exploit Development (debugging, memoria, shellcode)', issuer: 'OffSec' },
-  { code: 'OSEP', name: 'Evasión, movimiento lateral y entornos endurecidos', issuer: 'OffSec' },
-  { code: 'OSWE', name: 'Seguridad web avanzada y revisión de código', issuer: 'OffSec' },
-  { code: 'OSCP', name: 'Penetration Testing con Kali Linux', issuer: 'OffSec' },
-  { code: 'OSWP', name: 'Wireless Attacks', issuer: 'OffSec' },
-  { code: 'CEHv9', name: 'Certified Ethical Hacker', issuer: 'EC-Council' },
+  { code: 'OSCE³', name: 'Offensive Security Certified Expert 3', file: '/brand/certs/OSCE3.png' },
+  { code: 'OSED', name: 'Exploit Developer', file: '/brand/certs/OSED.png' },
+  { code: 'OSEP', name: 'Experienced Penetration Tester', file: '/brand/certs/OSEP.png' },
+  { code: 'OSWE', name: 'Web Expert', file: '/brand/certs/OSWE.png' },
+  { code: 'OSCP', name: 'Certified Professional', file: '/brand/certs/OSCP.png' },
+  { code: 'OSWP', name: 'Wireless Professional', file: '/brand/certs/OSWP.png' },
+  { code: 'CEHv9', name: 'Certified Ethical Hacker v9', file: '' },
+] as const;
+
+// Trayectoria profesional (de GitHub / CV)
+export const EXPERIENCE = [
+  { role: 'Penetration Tester', org: 'Aiuken Cybersecurity', place: 'Remoto, Colombia', period: 'Ene 2023 · Presente' },
+  { role: 'Security Consultant', org: 'CSIS Security Group A/S', place: 'Copenhague, Dinamarca', period: 'Ene 2022 · Dic 2022' },
+  { role: 'Penetration Tester', org: 'Mnemo', place: 'Madrid, España', period: 'Jun 2019 · Oct 2021' },
+  { role: 'Ethical Hacker', org: 'Entelgy', place: 'Bogotá, Colombia', period: 'Oct 2018 · Jun 2019' },
+  { role: 'Ethical Hacker', org: 'NewNet S.A', place: 'Bogotá, Colombia', period: 'Oct 2017 · Oct 2018' },
+  { role: 'Chief Information Security Officer', org: 'Colombian Outsourcing Solutions', place: 'Bogotá, Colombia', period: 'Feb 2015 · Sep 2017' },
+] as const;
+
+export const SKILLS = [
+  'Pentesting',
+  'Red Team',
+  'Exploit development',
+  'Reversing',
+  'Revisión de código',
+  'IA generativa',
+  'Python',
+  'C#',
+  'Java',
+  'PHP',
+] as const;
+
+export const INDUSTRIES = ['Aeronáutica', 'OT', 'Ferroviario', 'Banca', 'Gobierno', 'Sector privado'] as const;
+
+export const LANGUAGES = [
+  { lang: 'Español', level: 'Nativo' },
+  { lang: 'Inglés', level: 'B2' },
+  { lang: 'Japonés', level: 'A1' },
 ] as const;
 
 export const ORG = {
@@ -68,5 +105,5 @@ export const NAV = [
   { label: 'IA & Seguridad', href: '/ia-generativa-ciberseguridad/' },
   { label: 'Investigación', href: '/investigacion/' },
   { label: 'Xpectra', href: '/xpectra/' },
-  { label: 'Miguel Zabala', href: '/miguel-zabala/' },
+  { label: 'Perfil', href: '/miguel-zabala/' },
 ] as const;

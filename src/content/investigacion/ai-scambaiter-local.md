@@ -10,7 +10,7 @@ draft: true
 > Borrador desde el tema (tu post de LinkedIn con ~2.027 impresiones). Revísalo,
 > añade la demo y los detalles reales donde veas `TODO` y cambia `draft` a `false`.
 
-El *scambaiting* —hacer perder el tiempo a los estafadores— es un campo de pruebas
+El *scambaiting*, hacer perder el tiempo a los estafadores, es un campo de pruebas
 ideal para la IA agentic: conversación abierta, objetivos difusos y necesidad de
 mantener coherencia durante muchas interacciones.
 

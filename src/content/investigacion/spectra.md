@@ -15,7 +15,7 @@ legacyUrl: "https://nullsectorblog.co/spectra-project-innovacion-seguridad-infor
 En 2024 me hacía una pregunta: ¿puede la IA generativa aportar de verdad a la seguridad, más allá del marketing? SPECTRA fue el experimento para responderla, en dos frentes:
 
 - **Defensivo:** usar IA generativa para detectar patrones anómalos en tráfico y comportamiento, y proponer contramedidas.
-- **Ofensivo:** usar modelos de lenguaje grandes (LLMs) para **simular el comportamiento autónomo de un atacante** —emulación de adversarios— y así medir y endurecer las defensas.
+- **Ofensivo:** usar modelos de lenguaje grandes (LLMs) para **simular el comportamiento autónomo de un atacante**, emulación de adversarios, y así medir y endurecer las defensas.
 
 ## El núcleo técnico
 

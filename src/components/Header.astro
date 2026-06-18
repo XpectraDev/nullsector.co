@@ -4,7 +4,9 @@ const path = Astro.url.pathname;
 ---
 <header class="site-header">
   <div class="container">
-    <a class="brand" href="/">null<span>sector</span></a>
+    <a class="brand" href="/" aria-label="Nullsector, ir al inicio">
+      <img src="/brand/Logo_Amarillo.png" alt="Nullsector" width="122" height="30" />
+    </a>
     <nav class="nav" aria-label="Navegación principal">
       {NAV.map((item) => (
         <a href={item.href} aria-current={path === item.href ? 'page' : undefined}>{item.label}</a>

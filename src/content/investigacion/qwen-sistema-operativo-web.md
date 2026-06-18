@@ -28,7 +28,7 @@ grande y medible.
 Generar software con IA abre una pregunta inevitable: **¿quién revisa ese código?** Aquí
 es donde mi trabajo en <a href="/osce3/oswe/">revisión de código (OSWE)</a> se cruza con
 la IA: el flujo de datos y la superficie de ataque del código generado hay que auditarlos
-igual —o más— que el escrito a mano.
+igual, o más, que el escrito a mano.
 
 ## Demo
 

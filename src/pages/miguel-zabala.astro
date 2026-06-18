@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE, PERSON, ORG, CREDENTIALS } from '../consts';
+
+const url = `${SITE.url}/miguel-zabala/`;
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    '@id': `${url}#profilepage`,
+    url,
+    inLanguage: 'es',
+    mainEntity: { '@id': `${SITE.url}/#miguel-zabala` },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${SITE.url}/#miguel-zabala`,
+    name: PERSON.name,
+    alternateName: PERSON.alternateName,
+    jobTitle: PERSON.jobTitle,
+    description: PERSON.positioning,
+    url: SITE.url,
+    worksFor: { '@type': 'Organization', name: ORG.name, url: ORG.url },
+    knowsAbout: PERSON.knowsAbout,
+    sameAs: PERSON.sameAs,
+    hasCredential: CREDENTIALS.map((c) => ({
+      '@type': 'EducationalOccupationalCredential',
+      name: `${c.code} — ${c.name}`,
+      credentialCategory: 'certification',
+      recognizedBy: { '@type': 'Organization', name: c.issuer },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Miguel Zabala', item: url },
+    ],
+  },
+];
+---
+<BaseLayout
+  title="Miguel Zabala — Perfil oficial | OSCE³ y fundador de Xpectra"
+  description="Biografía oficial de Miguel Zabala: OSCE³, fundador y CEO de Xpectra, investigador en seguridad ofensiva e IA generativa aplicada a ciberseguridad."
+  type="profile"
+  structuredData={structuredData}
+>
+  <section class="section">
+    <div class="container prose">
+      <p class="eyebrow">Perfil oficial</p>
+      <h1>Miguel Zabala</h1>
+      <p class="lead">{PERSON.positioning}</p>
+      <p>{PERSON.valueProp}</p>
+
+      <h2>Trayectoria</h2>
+      <p>
+        Trabajo en seguridad ofensiva desde 2015, con experiencia internacional en
+        Colombia, España y Dinamarca, incluyendo sectores críticos. Esa década larga
+        de evaluaciones reales —no solo certificaciones— es la base sobre la que hoy
+        diseño agentes de IA que analizan, validan y documentan riesgos.
+      </p>
+
+      <h2>Especialidades</h2>
+      <ul>
+        <li><strong>Pentesting y Red Team:</strong> evaluaciones ofensivas de extremo a extremo.</li>
+        <li><strong>Exploit development y reversing:</strong> entender la vulnerabilidad a bajo nivel, no solo detectarla.</li>
+        <li><strong>Revisión de código:</strong> seguir el flujo de datos hasta la raíz del fallo.</li>
+        <li><strong>IA generativa aplicada a ciberseguridad:</strong> agentes con procesamiento local y privacidad.</li>
+      </ul>
+
+      <h2>Certificaciones</h2>
+      <p>
+        Mi credencial central es <a href="/osce3/">OSCE³</a>, el nivel experto de OffSec
+        que reúne <a href="/osce3/osed/">OSED</a>, <a href="/osce3/osep/">OSEP</a> y
+        <a href="/osce3/oswe/">OSWE</a>. Además: OSCP, OSWP y CEHv9.
+      </p>
+      <ul>
+        {CREDENTIALS.map((c) => (
+          <li><strong>{c.code}</strong> — {c.name} <span class="muted">({c.issuer})</span></li>
+        ))}
+      </ul>
+
+      <h2>Xpectra</h2>
+      <p>
+        Después de años realizando evaluaciones ofensivas, fundé <a href={ORG.url}>{ORG.name}</a>
+        para combinar metodología certificada, agentes de IA, validación y procesamiento local.
+        En <a href="/xpectra/">la página de Xpectra</a> cuento la tesis y la visión.
+      </p>
+
+      <h2>Verificación</h2>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/miguelzabalap" rel="me">LinkedIn</a></li>
+        <li><a href="https://github.com/MangelZabalaDevelop" rel="me">GitHub</a></li>
+        <li><a href={ORG.url} rel="me">Xpectra</a></li>
+        {/* TODO: enlace de verificación OSCE³ en Credential.net */}
+      </ul>
+      {/* TODO: añadir foto profesional de Miguel (image() en una colección o /public) */}
+    </div>
+  </section>
+</BaseLayout>

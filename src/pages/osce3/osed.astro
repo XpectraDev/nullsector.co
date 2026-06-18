@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../consts';
+
+const url = `${SITE.url}/osce3/osed/`;
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'OSED — Exploit development',
+    inLanguage: 'es',
+    author: { '@id': `${SITE.url}/#miguel-zabala` },
+    publisher: { '@id': `${SITE.url}/#miguel-zabala` },
+    mainEntityOfPage: url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'OSCE³', item: `${SITE.url}/osce3/` },
+      { '@type': 'ListItem', position: 3, name: 'OSED', item: url },
+    ],
+  },
+];
+---
+<BaseLayout
+  title="OSED — Exploit Development | OSCE³ | Miguel Zabala"
+  description="OSED: debugging, memoria, mitigaciones, shellcode y construcción de exploits. Qué cubre la certificación y cómo informa el diseño de agentes de IA para seguridad."
+  structuredData={structuredData}
+>
+  <section class="section">
+    <div class="container prose">
+      <p class="eyebrow">OSCE³ · Componente</p>
+      <h1>OSED — Exploit Development</h1>
+      <p class="lead">
+        OSED es la pieza de OSCE³ dedicada al <strong>desarrollo de exploits</strong>: bajar al
+        nivel de la memoria y entender por qué un fallo se convierte en ejecución de código.
+      </p>
+
+      <h2>Qué cubre</h2>
+      <ul>
+        <li>Debugging y análisis de fallos a nivel de memoria.</li>
+        <li>Mitigaciones modernas (DEP, ASLR…) y cómo se sortean.</li>
+        <li>Desarrollo de shellcode.</li>
+        <li>Construcción de exploits estables y reproducibles.</li>
+      </ul>
+
+      <h2>Por qué cambia tu criterio</h2>
+      <p>
+        Después de construir un exploit a mano, dejas de ver un CVE como una etiqueta: ves la
+        cadena exacta que lleva del fallo al control. Esa profundidad es la que separa
+        "vulnerable en teoría" de "explotable en la práctica".
+      </p>
+
+      <h2>Aplicado a la IA</h2>
+      <p>
+        En agentes de IA, OSED marca dónde la automatización ayuda (triaje, contexto,
+        documentación) y dónde no se puede delegar el juicio: confirmar explotabilidad real
+        sigue exigiendo criterio humano. Volver a <a href="/osce3/">OSCE³</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

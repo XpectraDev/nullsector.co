@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../consts';
+
+const url = `${SITE.url}/ia-generativa-ciberseguridad/`;
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'IA generativa aplicada a ciberseguridad',
+    inLanguage: 'es',
+    author: { '@id': `${SITE.url}/#miguel-zabala` },
+    publisher: { '@id': `${SITE.url}/#miguel-zabala` },
+    mainEntityOfPage: url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'IA y ciberseguridad', item: url },
+    ],
+  },
+];
+---
+<BaseLayout
+  title="IA generativa aplicada a ciberseguridad | Miguel Zabala"
+  description="Cómo aplico IA generativa a la seguridad ofensiva: agentes que analizan, validan y documentan riesgos con procesamiento local y privacidad. Casos: RGS, SPECTRA, Caldera."
+  structuredData={structuredData}
+>
+  <section class="section">
+    <div class="container prose">
+      <p class="eyebrow">Pilar</p>
+      <h1>IA generativa aplicada a ciberseguridad</h1>
+      <p class="lead">
+        Convierto experiencia ofensiva avanzada en agentes de IA capaces de analizar, validar y
+        documentar riesgos sin comprometer la privacidad de los datos.
+      </p>
+
+      <h2>Qué acelera la IA y qué no</h2>
+      <p>
+        Un modelo puede acelerar la recolección, la correlación de señales y la redacción de
+        informes. Lo que <em>no</em> delego: confirmar explotabilidad real, decidir el impacto
+        y asumir el riesgo. Esa frontera viene de la práctica ofensiva, no del modelo.
+      </p>
+
+      <h2>Local y privado por defecto</h2>
+      <p>
+        Trabajar con datos sensibles exige que la inteligencia se ejecute donde están los datos.
+        Lo desarrollo en <a href="/investigacion/por-que-ejecuto-ia-de-seguridad-en-local/">por qué
+        ejecuto IA de seguridad en local</a>.
+      </p>
+
+      <h2>Casos</h2>
+      <div class="grid grid-2" style="margin-top:1rem">
+        <a class="card" href="/investigacion/rgs-tool/">
+          <span class="tag">Mención honorable · NVIDIA</span>
+          <h3>RGS Tool</h3>
+          <p class="muted">Generación automatizada de informes con RAG y privacidad.</p>
+        </a>
+        <a class="card" href="/investigacion/spectra/">
+          <span class="tag">Proyecto</span>
+          <h3>SPECTRA</h3>
+          <p class="muted">Seguridad con IA generativa y LLMs.</p>
+        </a>
+        <a class="card" href="/investigacion/ia-con-superpoderes-ia-generativa-y-caldera/">
+          <span class="tag">Investigación</span>
+          <h3>IA generativa y Caldera</h3>
+          <p class="muted">IA con superpoderes aplicada a emulación de adversarios.</p>
+        </a>
+      </div>
+      <p style="margin-top:1.5rem"><a href="/investigacion/">Ver toda la investigación →</a></p>
+    </div>
+  </section>
+</BaseLayout>

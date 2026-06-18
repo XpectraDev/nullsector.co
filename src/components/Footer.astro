@@ -1,0 +1,21 @@
+---
+import { ORG } from '../consts';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <div class="f-brand">Miguel Zabala</div>
+      <small>OSCE³ · Fundador de {ORG.name} · Investigación en IA y ciberseguridad</small>
+    </div>
+    <nav class="f-links" aria-label="Enlaces del pie">
+      <a href="/miguel-zabala/">Perfil</a>
+      <a href="/investigacion/">Investigación</a>
+      <a href={ORG.url} rel="me">Xpectra</a>
+      <a href="https://github.com/MangelZabalaDevelop" rel="me">GitHub</a>
+    </nav>
+  </div>
+  <div class="container">
+    <small>© {year} Miguel Zabala — nullsector.co</small>
+  </div>
+</footer>

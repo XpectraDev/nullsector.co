@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../consts';
+
+const url = `${SITE.url}/osce3/`;
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'OSCE³: qué es y por qué importa',
+    inLanguage: 'es',
+    author: { '@id': `${SITE.url}/#miguel-zabala` },
+    publisher: { '@id': `${SITE.url}/#miguel-zabala` },
+    mainEntityOfPage: url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'OSCE³', item: url },
+    ],
+  },
+];
+---
+<BaseLayout
+  title="OSCE³ (OSCE3): qué es, qué incluye y por qué importa | Miguel Zabala"
+  description="OSCE³ es el nivel experto de OffSec: reúne OSED, OSEP y OSWE. Qué demuestra cada certificación y cómo cambia mi forma de diseñar agentes de IA para ciberseguridad."
+  structuredData={structuredData}
+>
+  <section class="section">
+    <div class="container prose">
+      <p class="eyebrow">Pilar</p>
+      <h1>OSCE³: el nivel experto de la seguridad ofensiva</h1>
+      <p class="lead">
+        OSCE³ (también escrito <strong>OSCE3</strong>) es la certificación de nivel experto de
+        OffSec. No es un examen: se obtiene al completar las <strong>tres certificaciones
+        avanzadas</strong> —OSED, OSEP y OSWE—, cada una con un examen práctico exigente.
+      </p>
+
+      <h2>Las tres disciplinas</h2>
+      <ul>
+        <li><a href="/osce3/osed/"><strong>OSED</strong></a> — Exploit development: debugging, memoria, mitigaciones, shellcode y construcción de exploits.</li>
+        <li><a href="/osce3/osep/"><strong>OSEP</strong></a> — Evasión, cadenas de ataque, movimiento lateral y operaciones en entornos endurecidos.</li>
+        <li><a href="/osce3/oswe/"><strong>OSWE</strong></a> — Revisión de código, flujos de datos, vulnerabilidades complejas y explotación avanzada de aplicaciones.</li>
+      </ul>
+
+      <h2>Por qué importa para una empresa</h2>
+      <p>
+        Quien combina estas tres perspectivas no solo encuentra fallos: entiende el riesgo a
+        bajo nivel, sabe cómo se encadena un ataque real y puede leer el código hasta la raíz
+        del problema. Es la diferencia entre un escáner que reporta y un experto que valida.
+      </p>
+
+      <h2>Cómo cambia mi forma de diseñar IA</h2>
+      <p>
+        Estas tres miradas definen cómo construyo agentes de IA para seguridad: qué tareas
+        puede acelerar un modelo (recolección, correlación, redacción de informes) y cuáles
+        siguen necesitando criterio humano (validación de impacto, explotación, decisiones de
+        riesgo). La certificación es el marco; la experiencia ofensiva es el juicio.
+      </p>
+
+      <h2>De OSCP a OSCE³</h2>
+      <p>
+        El camino hasta el nivel experto no fue directo. Lo cuento en
+        <a href="/osce3/mi-ruta/">mi ruta personal</a>, desde OSCP hasta completar OSCE³.
+      </p>
+
+      <h2>Verificación</h2>
+      <p class="muted">{/* TODO: enlazar verificación pública de credenciales (Credential.net) */}
+        Las credenciales son verificables públicamente. (Pendiente: enlace de Credential.net.)
+      </p>
+    </div>
+  </section>
+</BaseLayout>

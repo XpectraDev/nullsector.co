@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE, ORG } from '../consts';
+
+const url = `${SITE.url}/xpectra/`;
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${ORG.url}/#organization`,
+    name: ORG.name,
+    url: ORG.url,
+    description: ORG.description,
+    founder: { '@id': `${SITE.url}/#miguel-zabala` },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Xpectra', item: url },
+    ],
+  },
+];
+---
+<BaseLayout
+  title="Xpectra — la tesis desde el fundador | Miguel Zabala"
+  description="Xpectra combina metodología ofensiva certificada con agentes de IA, validación y procesamiento local. La historia y la visión desde su fundador, Miguel Zabala."
+  structuredData={structuredData}
+>
+  <section class="section">
+    <div class="container prose">
+      <p class="eyebrow">Desde el fundador</p>
+      <h1>Xpectra</h1>
+      <p class="lead">
+        Después de años realizando evaluaciones ofensivas, fundé Xpectra para combinar
+        metodología certificada, agentes de IA, validación y procesamiento local.
+      </p>
+
+      <h2>La tesis</h2>
+      <p>
+        La seguridad ofensiva genera mucha señal y muchos falsos positivos. La IA generativa
+        puede acelerar la recolección, la correlación y la documentación —pero el criterio sobre
+        el riesgo real sigue siendo humano—. Xpectra une ambas cosas: la profundidad de un
+        experto <a href="/osce3/">OSCE³</a> con agentes que escalan el trabajo sin sacrificar
+        la privacidad de los datos.
+      </p>
+
+      <h2>Por qué local y privado</h2>
+      <p>
+        En seguridad, los datos del cliente no deberían salir a una API de terceros. Por eso
+        priorizo el <a href="/investigacion/por-que-ejecuto-ia-de-seguridad-en-local/">procesamiento
+        local</a>: la inteligencia va a donde están los datos, no al revés.
+      </p>
+
+      <h2>Nullsector y Xpectra</h2>
+      <p>
+        Aquí, en Nullsector, cuento la investigación y la metodología. Xpectra es la consecuencia
+        empresarial: el lugar donde eso se convierte en producto y servicio.
+      </p>
+      <p>
+        <a class="btn btn-primary" href={ORG.url}>Visitar Xpectra</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

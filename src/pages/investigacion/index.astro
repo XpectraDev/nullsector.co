@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { SITE } from '../../consts';
+
+const posts = (await getCollection('investigacion'))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+const fmt = (d: Date) => d.toLocaleDateString('es-ES', { year: 'numeric', month: 'short' });
+---
+<BaseLayout
+  title={`Investigación | ${SITE.name}`}
+  description="Investigación y artículos largos de Miguel Zabala sobre seguridad ofensiva, OSCE³ e IA generativa aplicada a ciberseguridad."
+>
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Investigación</p>
+      <h1>Investigación</h1>
+      <p class="lead">Piezas largas sobre seguridad ofensiva, OSCE³ e IA generativa aplicada a ciberseguridad.</p>
+      <div class="grid grid-2" style="margin-top:2rem">
+        {posts.map((p) => (
+          <a class="card" href={`/investigacion/${p.id}/`}>
+            <span class="tag">{fmt(p.data.pubDate)}</span>
+            <h3>{p.data.title}</h3>
+            <p class="muted">{p.data.description}</p>
+          </a>
+        ))}
+      </div>
+      {posts.length === 0 && <p class="muted" style="margin-top:2rem">Próximamente.</p>}
+    </div>
+  </section>
+</BaseLayout>

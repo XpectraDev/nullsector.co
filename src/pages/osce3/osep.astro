@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../consts';
+
+const url = `${SITE.url}/osce3/osep/`;
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'OSEP — Evasión y entornos endurecidos',
+    inLanguage: 'es',
+    author: { '@id': `${SITE.url}/#miguel-zabala` },
+    publisher: { '@id': `${SITE.url}/#miguel-zabala` },
+    mainEntityOfPage: url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'OSCE³', item: `${SITE.url}/osce3/` },
+      { '@type': 'ListItem', position: 3, name: 'OSEP', item: url },
+    ],
+  },
+];
+---
+<BaseLayout
+  title="OSEP — Evasión y entornos endurecidos | OSCE³ | Miguel Zabala"
+  description="OSEP: evasión, cadenas de ataque, movimiento lateral y operaciones en entornos endurecidos. Qué cubre y cómo informa el diseño de agentes de IA para seguridad."
+  structuredData={structuredData}
+>
+  <section class="section">
+    <div class="container prose">
+      <p class="eyebrow">OSCE³ · Componente</p>
+      <h1>OSEP — Evasión y entornos endurecidos</h1>
+      <p class="lead">
+        OSEP es la pieza de OSCE³ centrada en <strong>operaciones reales contra defensas
+        activas</strong>: cuando hay EDR, segmentación y controles, y aun así hay que avanzar.
+      </p>
+
+      <h2>Qué cubre</h2>
+      <ul>
+        <li>Evasión de defensas y controles modernos.</li>
+        <li>Cadenas de ataque completas, no fallos aislados.</li>
+        <li>Movimiento lateral en redes segmentadas.</li>
+        <li>Operaciones en entornos endurecidos.</li>
+      </ul>
+
+      <h2>Por qué cambia tu criterio</h2>
+      <p>
+        OSEP enseña a pensar como un adversario que ya cuenta con que lo están vigilando. El
+        foco deja de ser "¿existe el fallo?" y pasa a "¿cómo se encadena hasta el impacto real
+        sin ser detenido?".
+      </p>
+
+      <h2>Aplicado a la IA</h2>
+      <p>
+        Esta mirada de cadena completa es la que llevo a los agentes: correlacionar señales y
+        proponer rutas de ataque plausibles, dejando la ejecución y la decisión de riesgo al
+        humano. Volver a <a href="/osce3/">OSCE³</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

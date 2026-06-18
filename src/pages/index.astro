@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE, PERSON, ORG, CREDENTIALS } from '../consts';
+
+// Identidad de Miguel como entidad central (schema.org Person), referenciada por @id.
+const person = {
+  '@type': 'Person',
+  '@id': `${SITE.url}/#miguel-zabala`,
+  name: PERSON.name,
+  alternateName: PERSON.alternateName,
+  jobTitle: PERSON.jobTitle,
+  description: PERSON.positioning,
+  url: SITE.url,
+  worksFor: { '@type': 'Organization', name: ORG.name, url: ORG.url },
+  knowsAbout: PERSON.knowsAbout,
+  sameAs: PERSON.sameAs,
+  hasCredential: CREDENTIALS.map((c) => ({
+    '@type': 'EducationalOccupationalCredential',
+    name: `${c.code} — ${c.name}`,
+    credentialCategory: 'certification',
+    recognizedBy: { '@type': 'Organization', name: c.issuer },
+  })),
+};
+
+const structuredData = [
+  { '@context': 'https://schema.org', ...person },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE.url}/#website`,
+    url: SITE.url,
+    name: SITE.name,
+    inLanguage: 'es',
+    publisher: { '@id': `${SITE.url}/#miguel-zabala` },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    '@id': `${SITE.url}/#profilepage`,
+    url: SITE.url,
+    mainEntity: { '@id': `${SITE.url}/#miguel-zabala` },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${ORG.url}/#organization`,
+    name: ORG.name,
+    url: ORG.url,
+    description: ORG.description,
+    founder: { '@id': `${SITE.url}/#miguel-zabala` },
+  },
+];
+---
+<BaseLayout title={SITE.title} description={SITE.description} type="profile" structuredData={structuredData}>
+  <section class="section hero">
+    <div class="container">
+      <p class="eyebrow">Seguridad ofensiva · IA generativa</p>
+      <h1>{PERSON.headline}</h1>
+      <p class="lead">{PERSON.positioning}</p>
+      <p class="value">{PERSON.valueProp}</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/miguel-zabala/">Conoce a Miguel</a>
+        <a class="btn btn-ghost" href="/investigacion/">Ver investigación</a>
+      </div>
+      <div class="creds">
+        {CREDENTIALS.map((c) => (
+          <span class="badge"><b>{c.code}</b></span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Pilares</p>
+      <h2>Dónde construyo autoridad</h2>
+      <div class="grid grid-2" style="margin-top:1.5rem">
+        <a class="card" href="/osce3/">
+          <span class="tag">OSCE³</span>
+          <h3>El camino OSCE³</h3>
+          <p class="muted">OSED, OSEP y OSWE: exploit development, evasión y revisión de código — y cómo cambian mi forma de diseñar agentes de IA.</p>
+        </a>
+        <a class="card" href="/ia-generativa-ciberseguridad/">
+          <span class="tag">IA &amp; Seguridad</span>
+          <h3>IA generativa aplicada a ciberseguridad</h3>
+          <p class="muted">Agentes que analizan, validan y documentan riesgos con procesamiento local y privacidad.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Casos verificables</p>
+      <h2>Evidencia, no autoproclamación</h2>
+      <div class="grid grid-2" style="margin-top:1.5rem">
+        <a class="card" href="/investigacion/rgs-tool/">
+          <span class="tag">Mención honorable · NVIDIA</span>
+          <h3>RGS Tool</h3>
+          <p class="muted">Reconocida por NVIDIA en su concurso de agentes de IA generativa con LangChain. Privacidad, RAG y automatización de informes.</p>
+        </a>
+        <a class="card" href="/investigacion/spectra/">
+          <span class="tag">Proyecto</span>
+          <h3>SPECTRA</h3>
+          <p class="muted">Investigación en seguridad con IA generativa y LLMs: metodología, dataset y límites.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

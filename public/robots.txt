@@ -1,0 +1,5 @@
+# nullsector.co
+User-agent: *
+Allow: /
+
+Sitemap: https://nullsector.co/sitemap-index.xml

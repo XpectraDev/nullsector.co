@@ -2,10 +2,9 @@ name: nullsector-staging
 region: nyc
 static_sites:
   - name: web
-    github:
-      repo: XpectraDev/nullsector.co
+    git:
+      repo_clone_url: https://github.com/XpectraDev/nullsector.co.git
       branch: main
-      deploy_on_push: true
     build_command: npm run build
     output_dir: dist
     environment_slug: node-js

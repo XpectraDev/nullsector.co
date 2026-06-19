@@ -4,9 +4,9 @@
 export const SITE = {
   url: 'https://nullsector.co',
   name: 'Nullsector',
-  title: 'Miguel Zabala | OSCE³, investigador de seguridad ofensiva e IA',
+  title: 'Miguel Zabala | Investigador de seguridad ofensiva e IA',
   description:
-    'Miguel Zabala, investigador de seguridad ofensiva OSCE³ con 9 años de experiencia (pentesting, exploit development, reversing) y fundador de Xpectra, IA generativa aplicada a ciberseguridad.',
+    'Miguel Zabala, investigador de seguridad ofensiva con 9 años en pentesting, exploit development y red team en sectores críticos. Fundador de Xpectra, IA generativa aplicada a ciberseguridad.',
   locale: 'es',
   themeColor: '#0a0c10',
 } as const;
@@ -14,10 +14,10 @@ export const SITE = {
 export const PERSON = {
   name: 'Miguel Zabala',
   alternateName: 'Nullsector',
-  headline: 'Investigador de seguridad ofensiva OSCE³ e IA generativa',
+  headline: 'Investigador de seguridad ofensiva e IA generativa',
   jobTitle: 'Penetration Tester · Investigador de seguridad ofensiva · Fundador de Xpectra',
   positioning:
-    'Investigador de seguridad ofensiva OSCE³ con 9 años de experiencia en pentesting, exploit development y reversing. Fundador de Xpectra, donde aplico IA generativa a la ciberseguridad.',
+    'Nueve años de seguridad ofensiva (pentesting, exploit development, red team) en sectores críticos. Fundador de Xpectra, donde aplico IA generativa a la ciberseguridad.',
   valueProp:
     'Convierto experiencia ofensiva avanzada en agentes de IA capaces de analizar, validar y documentar riesgos sin comprometer la privacidad de los datos.',
   email: 'nullsector00@gmail.com',

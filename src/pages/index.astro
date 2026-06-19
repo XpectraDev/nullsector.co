@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE, PERSON, ORG, CREDENTIALS, STATS, EXPERIENCE, SKILLS, INDUSTRIES } from '../consts';
+import { SITE, PERSON, ORG, EXPERIENCE, SKILLS, INDUSTRIES, CREDENTIALS } from '../consts';
 
 const person = {
   '@type': 'Person',
@@ -15,65 +15,75 @@ const person = {
   worksFor: { '@type': 'Organization', name: ORG.name, url: ORG.url },
   knowsAbout: PERSON.knowsAbout,
   sameAs: PERSON.sameAs,
-  hasCredential: CREDENTIALS.map((c) => ({
-    '@type': 'EducationalOccupationalCredential',
-    name: `${c.code}: ${c.name}`,
-    credentialCategory: 'certification',
-    url: PERSON.credentialUrl,
-  })),
+  hasCredential: CREDENTIALS.map((c) => ({ '@type': 'EducationalOccupationalCredential', name: `${c.code}: ${c.name}`, credentialCategory: 'certification', url: PERSON.credentialUrl })),
 };
-
 const structuredData = [
   { '@context': 'https://schema.org', ...person },
   { '@context': 'https://schema.org', '@type': 'WebSite', '@id': `${SITE.url}/#website`, url: SITE.url, name: SITE.name, inLanguage: 'es', publisher: { '@id': `${SITE.url}/#miguel-zabala` } },
   { '@context': 'https://schema.org', '@type': 'ProfilePage', '@id': `${SITE.url}/#profilepage`, url: SITE.url, mainEntity: { '@id': `${SITE.url}/#miguel-zabala` } },
   { '@context': 'https://schema.org', '@type': 'Organization', '@id': `${ORG.url}/#organization`, name: ORG.name, url: ORG.url, description: ORG.description, founder: { '@id': `${SITE.url}/#miguel-zabala` } },
 ];
+
+const featured = [
+  { href: '/investigacion/rgs-tool/', title: 'RGS Tool', desc: 'Generación automatizada de informes de seguridad con IA. Reconocida por NVIDIA en su concurso de agentes con LangChain.', meta: 'Mención NVIDIA' },
+  { href: '/investigacion/spectra/', title: 'SPECTRA', desc: 'LLMs y emulación de adversarios. La investigación que se convirtió en Xpectra.ai.', meta: 'I+D · 2024' },
+  { href: '/investigacion/la-doble-fuerza-de-la-auditoria-web-combinando-tacticas-manuales-y-automaticas/', title: 'La doble fuerza de la auditoría web', desc: 'Combinar tácticas manuales y automáticas para encontrar lo que cada una pasa por alto.', meta: 'Writeup' },
+  { href: '/investigacion/cve-2023-22518-vulnerabilidad-critica-en-confluence/', title: 'CVE-2023-22518 en Confluence', desc: 'Anatomía de una vulnerabilidad crítica y su explotación.', meta: 'CVE' },
+];
+
+const certLine = CREDENTIALS.map((c) => c.code).join(' · ');
 ---
 <BaseLayout title={SITE.title} description={SITE.description} type="profile" structuredData={structuredData}>
   <section class="hero">
-    <div class="container">
-      <p class="eyebrow">Seguridad ofensiva · IA generativa</p>
-      <h1><span class="gold">Miguel Zabala</span></h1>
-      <p class="lead"><span class="lead-strong">{PERSON.headline}.</span> Con 9 años en pentesting, exploit development y reversing, y fundador de Xpectra, donde aplico IA generativa a la ciberseguridad.</p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="/miguel-zabala/">Ver perfil completo</a>
-        <a class="btn btn-ghost" href={PERSON.credentialUrl} rel="noopener">Verificar OSCE³</a>
-        <a class="btn btn-ghost" href="https://github.com/MangelZabalaDevelop" rel="noopener">GitHub</a>
+    <div class="container hero-grid">
+      <div>
+        <p class="kicker">Investigador de seguridad ofensiva</p>
+        <h1>Rompo sistemas para entenderlos. Después construyo la IA que los defiende.</h1>
+        <p class="lead">Nueve años de pentesting, exploit development y red team en banca, gobierno, aeronáutica y entornos OT, en Colombia, España y Dinamarca. Fundador de <a href="/xpectra/">Xpectra</a>.</p>
+        <div class="hero-links">
+          <a href="/investigacion/">Investigación →</a>
+          <a href="/xpectra/">Xpectra →</a>
+          <a href="https://github.com/MangelZabalaDevelop" rel="noopener">GitHub →</a>
+          <a href={`mailto:${PERSON.email}`}>Contacto →</a>
+        </div>
       </div>
-      <div class="stats">
-        {STATS.map((s) => (
-          <div class="stat"><div class="n">{s.n}</div><div class="l">{s.l}</div></div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section-tight">
-    <div class="container">
-      <p class="eyebrow">Certificaciones verificables</p>
-      <div class="certs">
-        {CREDENTIALS.filter((c) => c.file).map((c) => (
-          <img src={c.file} alt={`${c.code}: ${c.name}`} title={`${c.code}: ${c.name}`} height="92" loading="lazy" />
-        ))}
-      </div>
-      <p class="muted" style="margin-top:1.1rem">
-        Incluye <strong class="gold">OSCE³</strong> (OSED + OSEP + OSWE) y CEHv9.
-        <a href={PERSON.credentialUrl} rel="noopener">Verificar en Credential.net</a>.
-      </p>
+      <aside class="vcard" aria-label="Ficha de Miguel Zabala">
+        <div class="row"><span class="k">whoami</span><span class="v">Miguel Zabala</span></div>
+        <div class="row"><span class="k">rol</span><span class="v">Pentester · Investigador</span></div>
+        <div class="row"><span class="k">base</span><span class="v">Bogotá, Colombia</span></div>
+        <div class="row"><span class="k">foco</span><span class="v">Ofensiva + IA generativa</span></div>
+        <div class="row"><span class="k">empresa</span><span class="v">Xpectra.ai</span></div>
+      </aside>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <p class="eyebrow">Trayectoria</p>
-      <h2>9 años de seguridad ofensiva, en 3 países</h2>
-      <p class="muted" style="margin-top:0.6rem">Sectores críticos auditados: {INDUSTRIES.join(', ')}.</p>
+      <p class="sec-label"><span class="n">01</span> Trabajo seleccionado</p>
+      <ol class="worklist">
+        {featured.map((w, i) => (
+          <li><a href={w.href}>
+            <span class="idx">{String(i + 1).padStart(2, '0')}</span>
+            <div><h3>{w.title}</h3><p>{w.desc}</p></div>
+            <span class="meta">{w.meta}</span>
+          </a></li>
+        ))}
+      </ol>
+      <p class="mono" style="margin-top:1.7rem"><a href="/investigacion/">Ver toda la investigación →</a></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="sec-label"><span class="n">02</span> Trayectoria</p>
       <div class="timeline">
         {EXPERIENCE.map((e) => (
           <div class="tl">
-            <div class="role">{e.role} <span class="muted">·</span> <span class="org">{e.org}</span></div>
-            <div class="meta">{e.place} · {e.period}</div>
+            <div class="when">{e.period}</div>
+            <div>
+              <div class="role">{e.role} <span class="muted">·</span> <span class="org">{e.org}</span></div>
+              <div class="place">{e.place}</div>
+            </div>
           </div>
         ))}
       </div>
@@ -82,65 +92,33 @@ const structuredData = [
 
   <section class="section">
     <div class="container">
-      <p class="eyebrow">Especialidades</p>
-      <div class="chips">
-        {SKILLS.map((s) => <span class="chip">{s}</span>)}
-      </div>
-      <div class="grid grid-2" style="margin-top:2.2rem">
-        <a class="card" href="/osce3/">
-          <span class="tag">OSCE³</span>
-          <h3>El camino OSCE³</h3>
-          <p class="muted">OSED, OSEP y OSWE: exploit development, evasión y revisión de código, y cómo cambian mi forma de diseñar agentes de IA.</p>
-        </a>
-        <a class="card" href="/ia-generativa-ciberseguridad/">
-          <span class="tag">IA y seguridad</span>
-          <h3>IA generativa aplicada a ciberseguridad</h3>
-          <p class="muted">Agentes que analizan, validan y documentan riesgos con procesamiento local y privacidad.</p>
-        </a>
-      </div>
+      <p class="sec-label"><span class="n">03</span> Qué hago</p>
+      <div class="chips">{SKILLS.map((s) => <span class="chip">{s}</span>)}</div>
+      <p class="certline" style="margin-top:1.7rem">Certificaciones: <strong>{certLine}</strong>. <a href={PERSON.credentialUrl} rel="noopener">Verificables ↗</a></p>
+      <p class="muted" style="margin-top:0.5rem">Sectores auditados: {INDUSTRIES.join(' · ')}.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <p class="eyebrow">Evidencia, no autoproclamación</p>
-      <h2>Proyectos destacados</h2>
-      <div class="grid grid-2" style="margin-top:1.6rem">
-        <a class="card" href="/investigacion/rgs-tool/">
-          <span class="tag">Mención honorable · NVIDIA</span>
-          <h3>RGS Tool</h3>
-          <p class="muted">Generación automatizada de informes de seguridad con IA. Reconocida por NVIDIA en su concurso de agentes de IA generativa con LangChain.</p>
-        </a>
-        <a class="card" href="/investigacion/spectra/">
-          <span class="tag">El origen de Xpectra</span>
-          <h3>SPECTRA</h3>
-          <p class="muted">La fase de investigación con LLMs y emulación de adversarios que evolucionó hasta convertirse en Xpectra.ai.</p>
-        </a>
-      </div>
-      <p style="margin-top:1.6rem"><a href="/investigacion/">Ver toda la investigación</a></p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <p class="eyebrow">Del laboratorio a la empresa</p>
-      <h2>Xpectra</h2>
-      <p class="lead" style="margin-top:0.8rem">{ORG.description}</p>
+      <p class="sec-label"><span class="n">04</span> Xpectra</p>
+      <p class="lead" style="max-width:60ch">{ORG.description}</p>
       <div class="btn-row">
         <a class="btn btn-primary" href={ORG.url} rel="noopener">Visitar Xpectra</a>
-        <a class="btn btn-ghost" href="/xpectra/">La tesis, desde el fundador</a>
+        <a class="btn" href="/xpectra/">La tesis, desde el fundador</a>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <p class="eyebrow">Contacto</p>
+      <p class="sec-label"><span class="n">05</span> Contacto</p>
       <h2>Hablemos</h2>
       <p class="muted" style="margin-top:0.6rem">¿Un proyecto de seguridad ofensiva o IA aplicada? Escríbeme.</p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href={`mailto:${PERSON.email}`}>{PERSON.email}</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/miguelzabalap" rel="noopener">LinkedIn</a>
+      <div class="hero-links" style="margin-top:1.2rem">
+        <a href={`mailto:${PERSON.email}`}>{PERSON.email}</a>
+        <a href="https://www.linkedin.com/in/miguelzabalap" rel="noopener">LinkedIn →</a>
+        <a href="https://github.com/MangelZabalaDevelop" rel="noopener">GitHub →</a>
       </div>
     </div>
   </section>
